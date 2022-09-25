@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Estructura de datos</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Moquer</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="index.html">Introduccion</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="metodos-ordenamiento.html">Metodos de ordenamiento</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mas</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="Estructuras-fundamentales-de-datos.html">Estructuras fundamentales de datos</a></li>
+                                <li><a class="dropdown-item" href="metodos-busqueda.html">Metodos de busqueda</a></li>
+                                <li><a class="dropdown-item" href="Algoritmos.html">Algoritmos</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page content-->
+        <div class="container">
+            <div class="text-center mt-5">
+                <h1>Metodos de ordenamiento</h1>
+                <p class="lead" align="left">
+                    Ordenar significa permutar estos elementos de tal forma que queden de acuerdo con una distribución preestablecida.
+                    <br>
+                    En el procesamiento los métodos de ordenamiento se clasifican en dos grandes categorías:
+                    <br>
+                </p>
+                <ul class="lead" align="left">
+                <li>Ordenación de arreglos.</li> 
+                <li>Ordenación de archivos.</li>    
+                </ul>
+                <p class="lead" align="left">
+                    La primera se denomina ordenación interna, ya que los elementos o componentes de los arreglos se encuentran en la memoria principal de la computadora.
+                    <br><br>
+                    La segunda se denomina ordenación externa ya que los elementos se encuentran en archivos almacenados en dispositivos de almacenamiento secundarios, como discos, cintas, tambores, etcétera.
+                    <br><br>                     
+                </p>
+                <h3 align="center">Ordenacion interna</h3>
+                <p class="lead" align="left">
+                    La ordenación interna se puede aplicar en arreglos unidimensionales, estructuras de datos más avanzadas por lo que se puede aplicar en todos los tipos, para comenzar la ordenación se divide en dos tipos:
+                    <br> 
+                </p>
+                <ul class="lead" align="left">
+                   <li>Métodos directos.</li> 
+                   <li>Métodos logarítmicos.</li>
+                   <br> 
+                </ul>
+                <p class="lead" align="left">
+                    Los métodos directos poseen una característica de su implementación es relativamente sencilla y son fáciles de comprender, aunque se puede complicar cuando se tiene un numero indeterminado de registros, mientras que los métodos logarítmicos son mas complejos, sin embargo, son más eficientes ya que no necesitan recorrer todo y tampoco necesitan comparar varios datos.
+                </p>
+                <ul class="lead" align="left">
+                    Los métodos directos más conocidos son:
+                   <li>Ordenación por intercambio.</li> 
+                   <li>Ordenación por inserción.</li>  
+                   <li>Ordenación por selección.</li> 
+                </ul> 
+                <h3 align="center">Ordenacion por intercambio</h3>
+                <br>
+                <p class="lead" align="left">
+                    Este método conocido coloquialmente como burbuja, es el mas utilizado por los estudiantes principiantes esto por su fácil comprensión a la hora de aplicarlo, al igual que cabe destacar e uno de los métodos mas ineficientes.
+                    <br><br> 
+                    El método puede trabajar de dos maneras distintas, una de las primeras formas es llevando los elementos mas pequeños hacia la parte izquierda del arreglo o trasladando los elementos mas grandes hacia su parte derecha.
+                    <br><br>
+                    La idea principal de este método es compáralos todos los elementos e irlos acomodando hasta que por fin allá recorrido todos para después tener los datos ordenados.
+                    <br><br>
+                </p>
+                <p class="lead" align="left">
+                n=0;
+		        <br>
+                //Recorrer la lista
+		        <br>
+                Para i=2 Hasta l Con Paso 1 Hacer
+			    <br>
+                //Verificar si los dos valores estan ordenados
+			    Si lista[i-1]>lista[i]
+				<br>
+                //Ordenar si es necesario
+				<br>
+                temp=lista[i-1];
+				<br>
+                lista[i-1]=lista[i];
+				<br>
+                lista[i]=temp;
+				<br>
+                n=i;
+				<br>
+                mostrarLista(lista,lon);
+			    <br>
+                FinSi
+		        <br>
+                FinPara
+		        <br>
+                l=n;
+	            <br>
+                Hasta Que n=0;
+                <br>
+                FinProceso
+                </p> 
+                <h3 align="center">Ordenación por inserción directa</h3>
+                <p class="lead" align="left">
+                    Este método de ordenación es el que se utiliza generalmente en los jugadore de cartas cuando ordenan, de ahí también que se conozca como el método de la baraja.
+                    <br><br> 
+                    La idea central de este algoritmo consiste en insertar un elemento del arreglo en su parte izquierda que ya se encuentra ordenada y esto se repite hasta n veces.
+                    <br><br>
+                </p> 
+                <p class="lead" align="left">
+                    int p, j;
+                    <br>
+                    int aux;
+                    <br>
+                    for (p = 1; p < A.length; p++){ // desde el segundo elemento hasta
+                    <br>
+                    aux = A[p];    // el final, guardamos el elemento y
+                    <br>
+                    j = p - 1;    // empezamos a comprobar con el anterior
+                    <br>
+                    while ((j >= 0) && (aux < A[j])){ // mientras queden posiciones y el                                
+                    <br>
+                    // valor de aux sea menor que los
+                    <br>
+                    A[j + 1] = A[j];   // de la izquierda, se desplaza a
+                    j--;       // la derecha
+                    <br>
+                    }
+                    <br>
+                    A[j + 1] = aux;       // colocamos aux en su sitio
+                    <br>
+                    }
+                </p>
+                <h3 align="center">Ordenación por selección directa</h3>
+                <p class="lead" align="left">
+                    Este es uno de los métodos mas eficientes, esto por que su comportamiento es mejor que los otros mencionados y su programación es fácil y comprensible, este método no se recomienda utilizarlo en un arreglo cuando es mediano o grande.
+                    <br><br> 
+                    La idea de este algoritmo consiste en buscar el segundo elemento mas pequeño del arreglo y se coloca en segunda posición, luego se busca el segundo elemento mas pequeño del arreglo y se coloca en la segunda posición y así continua el proceso hasta que queda totalmente ordenado.
+                    <br><br>
+                </p>
+                <p class="lead" align="left">
+                    selección (A,N)
+                    <br>
+                    Repetir con l desde 1 hasta N-1
+                    <br>
+                    Hacer MENOR=A[l] y K=l
+                    <br>
+                    Repetir con J desde l + 1 hasta N
+                    <br>
+                    Si (A[J] MENOR) entonces
+                    <br>
+                    Hacer MENOR =A[J] y K=J
+                    <br>
+                    Fin del condicional 
+                    <br>
+                    Fin del ciclo  
+                    <br>
+                    Hacer A[K] = A[l] y A[l]=MENOR
+                    <br>
+                    Fin del ciclo 
+                </p>
+                <br>
+                <p class="lead" align="left">Moquer Company v0.1</p>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

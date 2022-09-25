@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Estructura de datos</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Moquer</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="index.html">Introduccion</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#">Estructuras de datos no lineales</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mas estructuras de datos</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="Estructuras-fundamentales-de-datos.html">Estructuras fundamentales de datos</a></li>
+                                <li><a class="dropdown-item" href="estructuras-datos-simples.html"> Estructuras de datos simples</a></li>
+                                <li><a class="dropdown-item" href="estructuras-datos-lineales.html">Estructuras de datos lineales</a></li>
+                                <li><a class="dropdown-item" href="arboles.html">Arboles</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page content-->
+        <div class="container">
+            <div class="text- mt-5">
+                <h1 align="center">Arboles</h1>
+                <br>
+                <p class="lead" align="left">
+                    Los arboles se definen como una estructura no lineal y dinámica en la que cada uno de sus nodos puede apuntar a un nodo o a varios, al igual que también se puede definir como una estructura compuesta por un dato y varios árboles.
+                    <br>
+                    Esta estructura no es lineal puesto que tiene un sucesor o un predecesor, una de sus propiedades que se considera tener son los arboles balanceados que en este caso son la estructura mas eficiente para trabajar con la memoria principal del procesador.
+                    <br>
+                    Un árbol en el que en cada nodo o bien todos o ninguno de los hijos existe, se llama árbol completo. 
+                    Una cosa de los arboles es que cualquier nodo puede ser el nodo raíz y se puede considerar una estructura independiente.
+                    <br><br> 
+                    Existen conceptos sobre las características que definen el árbol las cuales son:
+                    </p>
+                    <ul class="lead">
+                   <li>Orden: Es el número potencial de hijos que puede tener cada elemento del árbol.</li> 
+                   <li>Grado: es el número de hijos que tiene el elemento con más hijos dentro del árbol.</li>  
+                   <li>Nivel: se define para cada elemento del árbol como la distancia a la raíz, medida en nodos.</li> 
+                   <li>Altura: la altura de un árbol se define como el nivel del nodo de mayor nivel.</li> 
+                    </ul>
+                    <br>
+                    <p class="lead" align="left">
+                    Para poder navegar con mas facilidad dentro del árbol se puede agregar un puntero a cada nodo y que apunte al nodo raíz, ya que de esta forma se puede avanzar hacia las hojas y hacia el nodo raíz.
+                    Es importante conservar el nodo raíz ya que este nodo es el desde donde se desarrolla el árbol, si se pierde este nodo se pierde el acceso a todo el árbol.
+                    <br><br>
+                    Ejemplo para crear un árbol de orden 3.
+                    <br><br>
+                    struct nodo {
+                        <br>
+                        int dato;
+                        <br>
+                        struct nodo *rama1;
+                        <br>
+                        struct nodo *rama2;
+                        <br>
+                        struct nodo *rama3;
+                        <br>
+                       }
+                       <br>                       
+                    </p>
+                <ul class="lead">
+                    OPERACIONES CON ARBOLES:
+                    <li>Agregar o insertar elementos.</li>
+                    <li>Buscar o localizar elementos.</li>
+                    <li>Borrar elementos.</li>
+                    <li>Moverse a través del árbol.</li>
+                    <li>Recorrer el árbol completo.</li>
+                </ul>
+                <p align="center"><img src="assets/Arbol_rep.png"></p>
+                <br>
+                <h3 align="center">Recorridos de arboles</h3>
+                <br>
+                <p class="lead" align="left">
+                Uno de los modos de moverse es a través de las ramas de un árbol siguiendo los punteros, del mismo modo en que se puede mover en las listas.
+                <br> 
+                Para poder recorrer el árbol depende mucho del tipo y propósito del árbol, pero existen recorridos que se usaran frecuentemente, estos recorridos incluyen todo el árbol.
+                <br>
+                Existen tres formas de recorrer el árbol, lo que diferencia a cada uno de los recorridos es el momento en que elegimos para procesar el valor de cada nodo con relación de un nodo a otro.
+                <br><br>
+                </p>
+                <ul class="lead">
+                    <li>Pre-orden
+                        En este tipo de recorrido, el valor del nodo se procesa antes de recorrer las ramas.
+                        <br><br>
+                        void PreOrden(Arbol a) {
+                            <br>
+                            if(a == NULO) return;
+                            <br>
+                            Procesar(dato);
+                            <br>
+                            RecorrerArbol(a.rama[0]);
+                            <br>
+                            RecorrerArbol(a.rama[1]);
+                            <br>
+                            RecorrerArbol(a.rama[2]);
+                            <br>
+                           }
+                           <br><br>
+                    </li>
+                    <li>In-orden
+                        En este tipo de recorrido, el valor del nodo se procesa después de recorrer la primera rama y antes de recorrer la última. Esto tiene más sentido en el caso de árboles binarios, y también cuando existen ORDEN-1 datos, en cuyo caso procesaremos cada dato entre el recorrido de cada dos ramas (este es el caso de los árboles-b).
+                        <br><br>
+                        void InOrden(Arbol a) {
+                            <br>
+                            if(a == NULO) return;
+                            <br>
+                            RecorrerArbol(a.rama[0]);
+                            <br>
+                            Procesar(dato);
+                            <br>
+                            RecorrerArbol(a.rama[1]);
+                            <br>
+                            RecorrerArbol(a.rama[2]);
+                            <br>
+                           }
+                           <br><br>
+                        </li>
+                        <li>Post orden
+                            En este tipo de recorrido, el valor del nodo se procesa después de recorrer todas las ramas.
+                            <br><br>
+                            void PostOrden(Arbol a) {
+                                <br>
+                                if(a == NULO) return;
+                                <br>
+                                RecorrerArbol(a.rama[0]);
+                                <br>
+                                RecorrerArbol(a.rama[1]);
+                                <br>
+                                RecorrerArbol(a.rama[2]);
+                                <br>
+                                Procesar(dato);
+                                <br>
+                               }
+                               <br><br>
+                            </li>
+                </ul>
+                <h3 align="center">Arboles binarios</h3>
+                <p class="lead">
+                    Este tipo de árbol es de orden 2 en los que se cumplen para cada nodo, El valor clave de la raíz del subárbol izquierdo es menor que el valor de la clave del nodo y que el valor de la clave raíz del subárbol derecho es mayor que el valor de la clave del nodo.
+                    <br><br>
+                </p>
+                <ul class="lead">
+                    OPERACIONES DE ARBOLES BINARIOS:
+                   <li>Buscar un elemento.</li> 
+                   <li>Insertar un elemento.</li> 
+                   <li>Borrar un elemento.</li> 
+                   <br>
+                    <ul class="lead">
+                        Movimientos a través del árbol:
+                       <li>Izquierda.</li> 
+                       <li>Derecha.</li> 
+                       <li>Raíz.</li> 
+                    </ul>
+                    <br>
+                    <ul class="lead">
+                        Información:
+                       <li>Comprobar si un árbol está vacío.</li> 
+                       <li>Calcular el número de nodos.</li> 
+                       <li>Comprobar si el nodo es hoja.</li> 
+                       <li>Calcular la altura de un nodo.</li> 
+                       <li>Calcular la altura de un árbol.</li> 
+
+                    </ul>
+                </ul>
+               <p align="center"><img src="assets/arbol_bin_rep.png"></p> 
+               <br>
+               <p class="lead" align="left">Moquer Company v0.1</p>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

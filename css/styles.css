@@ -60,8 +60,8 @@
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
-  --bs-body-color: #212529;
-  --bs-body-bg: #fff;
+  --bs-body-color: #e9ecef;;
+  --bs-body-bg: rgb(0, 0, 0);
 }
 
 *,
@@ -3564,7 +3564,7 @@ textarea.form-control-lg {
   color: #212529;
   text-align: left;
   list-style: none;
-  background-color: #fff;
+  background-color: #212529;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
@@ -3765,7 +3765,7 @@ textarea.form-control-lg {
   padding: 0.25rem 1rem;
   clear: both;
   font-weight: 400;
-  color: #212529;
+  color: #e9ecef;
   text-align: inherit;
   text-decoration: none;
   white-space: nowrap;
